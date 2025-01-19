@@ -1822,3 +1822,122 @@ img {
         padding: 1rem;
     }
 }
+
+/* CV Section */
+.cv-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: var(--card-bg);
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.cv-summary {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.cv-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+}
+
+.btn-secondary {
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow);
+}
+
+.social-links-large {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.social-links-large .social-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-links-large .social-link i {
+    font-size: 1.5rem;
+    padding: 1rem;
+    border-radius: 50%;
+    background: var(--surface);
+    transition: all 0.3s ease;
+}
+
+.social-links-large .social-link:hover {
+    color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.social-links-large .social-link:hover i {
+    background: var(--primary);
+    color: white;
+}
+
+/* Fixed Contact Button */
+.hire-me-fixed {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    border-radius: 2rem;
+    box-shadow: 0 4px 12px var(--shadow);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.hire-me-fixed:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px var(--shadow);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .cv-actions {
+        flex-direction: column;
+    }
+
+    .social-links-large {
+        flex-wrap: wrap;
+    }
+
+    .hire-me-fixed {
+        bottom: 1rem;
+        left: 1rem;
+        font-size: 0.875rem;
+    }
+}
