@@ -226,6 +226,7 @@ h2 {
 .contact-form {
     max-width: 500px;
     margin: 0 auto;
+    margin-bottom: 4rem; /* Add space after form */
 }
 
 .contact-form label {
@@ -262,35 +263,35 @@ h2 {
     background-color: #555;
 }
 
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    position: fixed;
-    bottom: 0;
+footer, .footer {
+    background-color: var(--card-bg);
+    color: var(--text);
+    padding: 1.5rem 0; /* Reduced padding */
     width: 100%;
+    position: relative; /* Changed from fixed */
+    bottom: 0;
+    margin-top: auto;
 }
 
-.social-media {
+footer .social-media {
     list-style: none;
     display: flex;
     justify-content: center;
     margin-top: 10px;
 }
 
-.social-media li {
+footer .social-media li {
     margin: 0 10px;
 }
 
-.social-media a {
+footer .social-media a {
     color: #fff;
     font-size: 1.5rem;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.social-media a:hover {
+footer .social-media a:hover {
     color: #ddd;
 }
 
@@ -714,6 +715,7 @@ footer {
   
   main {
     flex: 1 0 auto;
+    margin-bottom: 2rem; /* Add space before footer */
   }
   
   /* Navigation */
@@ -981,9 +983,11 @@ body {
 .footer {
     background-color: var(--card-bg);
     color: var(--text);
-    padding: 3rem 0;
+    padding: 1.5rem 0; /* Reduced padding */
     width: 100%;
-    transition: opacity 0.3s ease;
+    position: relative; /* Changed from fixed */
+    bottom: 0;
+    margin-top: auto;
 }
 
 .footer.hidden {
@@ -1105,7 +1109,7 @@ body {
 .footer {
   background-color: var(--card-bg);
   color: var(--text);
-  padding: 3rem 0;
+  padding: 1.5rem 0; /* Reduced padding */
   margin-top: 4rem;
   border-top: 1px solid var(--gray-light);
 }
@@ -1121,11 +1125,11 @@ body {
 .footer {
   background-color: var(--card-bg);
   color: var(--text);
-  padding: 3rem 0;
+  padding: 1.5rem 0; /* Reduced padding */
   margin-top: 4rem;
   border-top: 1px solid var(--gray-light);
   text-align: center;
-  position: fixed;
+  position: relative; /* Changed from fixed */
   bottom: 0;
   width: 100%;
 }
