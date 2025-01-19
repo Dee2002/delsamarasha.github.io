@@ -17,9 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Smooth scrolling
     initializeSmoothScroll();
     
-    // Initialize testimonial slider
-    initializeTestimonialSlider();
-    
     // Initialize footer visibility
     handleFooterVisibility();
     
@@ -108,29 +105,6 @@ function initializeSmoothScroll() {
             }
         });
     });
-}
-
-// Testimonial slider
-function initializeTestimonialSlider() {
-    const slider = document.querySelector('.testimonial-slider');
-    const slides = document.querySelectorAll('.testimonial-slide');
-    let currentSlide = 0;
-    
-    function showSlide(index) {
-        slides.forEach((slide, i) => {
-            slide.style.opacity = i === index ? '1' : '0';
-            slide.style.transform = i === index ? 'translateX(0)' : 'translateX(100%)';
-        });
-    }
-    
-    // Auto advance slides
-    setInterval(() => {
-        currentSlide = (currentSlide + 1) % slides.length;
-        showSlide(currentSlide);
-    }, 5000);
-    
-    // Initial slide
-    showSlide(0);
 }
 
 // Utility function for debouncing

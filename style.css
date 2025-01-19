@@ -559,11 +559,6 @@ footer .social-media a:hover {
     text-align: center;
 }
 
-.testimonials h2 {
-    margin-bottom: 30px;
-    color: #222;
-}
-
 .testimonial-item {
     background-color: #f9f9f9;
     padding: 20px;
@@ -940,7 +935,7 @@ body {
 }
 
 .project-description {
-  color: var(--gray);
+  color: var (--gray);
   margin-bottom: 1rem;
 }
 
@@ -1707,6 +1702,8 @@ img {
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
 }
 
 .project-card:hover {
@@ -1725,6 +1722,24 @@ img {
     transform: scale(1.05);
 }
 
+.project-content {
+    padding: 1.5rem;
+}
+
+.project-tech {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.project-tech span {
+    background: var(--primary);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+}
+
 /* Skills Section */
 .skills-grid {
     display: grid;
@@ -1737,6 +1752,7 @@ img {
     padding: 2rem;
     border-radius: 12px;
     transition: transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .skill-item {
@@ -1744,9 +1760,14 @@ img {
     align-items: center;
     gap: 1rem;
     margin: 1rem 0;
-    padding: 0.5rem;
+    padding: 0.75rem;
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.05);
+}
+
+.skill-item i {
+    font-size: 1.5rem;
+    color: var(--primary);
 }
 
 /* Testimonials Section */
@@ -1922,7 +1943,7 @@ img {
 
 .hire-me-fixed:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px var(--shadow);
+    box-shadow: 0 6px 16px var (--shadow);
 }
 
 /* Responsive adjustments */
