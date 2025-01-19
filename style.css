@@ -1692,3 +1692,133 @@ img {
     display: none;
   }
 }
+
+/* Projects Section */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.project-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.skill-category {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Testimonials Section */
+.testimonial-slider {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.testimonial-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    background: var(--card-bg);
+    border-radius: 12px;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.testimonial-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 3px solid var(--primary);
+}
+
+/* Blog Section */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.blog-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+}
+
+.blog-content {
+    padding: 1.5rem;
+}
+
+/* Animations */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-on-scroll.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .projects-grid,
+    .skills-grid,
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .testimonial-slide {
+        padding: 1rem;
+    }
+}

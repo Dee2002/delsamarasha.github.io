@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Scroll animations
     initializeScrollAnimations();
     
+    // Initialize project cards
+    initializeProjectCards();
+    
     // Navigation highlighting
     initializeNavHighlighting();
     
@@ -55,6 +58,14 @@ function initializeScrollAnimations() {
     });
     
     animatedElements.forEach(el => observer.observe(el));
+}
+
+// Initialize project cards
+function initializeProjectCards() {
+    const cards = document.querySelectorAll('.project-card, .skill-category, .blog-card');
+    cards.forEach(card => {
+        card.classList.add('animate-on-scroll');
+    });
 }
 
 // Navigation highlighting
