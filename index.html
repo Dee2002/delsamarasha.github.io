@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,18 +33,22 @@
         "description": "Full Stack Developer specializing in web development and mental health tech solutions"
     }
     </script>
+    <link rel="canonical" href="https://dee2002.github.io/delsamarasha.github.io/" />
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" as="font" crossorigin>
 </head>
 <body>
 
     <header>
-        <nav class="navbar">
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
             <div class="nav-content container">
                 <a href="#home" class="logo">Delsa Marasha</a>
-                <div class="menu-toggle">
+                <button class="menu-toggle" aria-label="Toggle navigation menu">
                     <span></span>
                     <span></span>
                     <span></span>
-                </div>
+                </button>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -84,72 +88,138 @@
         </section>
 
         <section id="projects" class="projects section">
-            <div class="container">
-                <h2 class="section-title">Projects</h2>
-                <div class="projects-grid">
-                    <article class="project-card animate-on-scroll">
-                        <img src="images/afrimind.jpg" alt="AfriMind - Mental Health Platform for African Women" class="project-image">
-                        <div class="project-content">
-                            <h3>AfriMind</h3>
-                            <p>A wellness platform supporting African women's mental health journey with culturally relevant resources.</p>
-                            <div class="project-tech">
-                                <span>Python</span>
-                                <span>JavaScript</span>
-                                <span>React</span>
-                            </div>
+    <div class="container">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card animate-on-scroll">
+                <a href="https://afrimind-f2acf8112b6f.herokuapp.com/" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   aria-label="Visit AfriMind Platform">
+                    <img src="images/afrimind.jpg" alt="AfriMind Platform" class="project-image">
+                    <div class="project-content">
+                        <h3>AfriMind</h3>
+                        <p>A wellness platform supporting African women's mental health journey with culturally relevant resources.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>JavaScript</span>
+                            <span>React</span>
                         </div>
-                    </article>
-
-                    <article class="project-card animate-on-scroll">
-                        <img src="images/jobsync.png" alt="JobSync Platform" class="project-image">
-                        <div class="project-content">
-                            <h3>JobSync</h3>
-                            <p>An innovative job search platform streamlining the application process.</p>
-                            <div class="project-tech">
-                                <span>Node.js</span>
-                                <span>JavaScript</span>
-                                <span>HTML/CSS</span>
-                            </div>
-                        </div>
-                    </article>
-                </div>
+                    </div>
+                </a>
             </div>
-        </section>
+
+            <div class="project-card animate-on-scroll">
+                <a href="https://jobsync-85om.onrender.com/" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   aria-label="Visit JobSync Platform">
+                    <img src="images/jobsync.jpg" alt="JobSync Platform" class="project-image">
+                    <div class="project-content">
+                        <h3>JobSync</h3>
+                        <p>An innovative job search platform streamlining the application process.</p>
+                        <div class="project-tech">
+                            <span>Node.js</span>
+                            <span>JavaScript</span>
+                            <span>HTML/CSS</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
 
         <section id="skills" class="skills section">
-            <div class="container">
-                <h2 class="section-title">Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-category animate-on-scroll">
-                        <h3>Frontend Development</h3>
-                        <div class="skill-item">
-                            <i class="fab fa-html5"></i>
-                            <span>HTML5</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-css3-alt"></i>
-                            <span>CSS3</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-js"></i>
-                            <span>JavaScript</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category animate-on-scroll">
-                        <h3>Backend Development</h3>
-                        <div class="skill-item">
-                            <i class="fab fa-python"></i>
-                            <span>Python</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-node-js"></i>
-                            <span>Node.js</span>
-                        </div>
-                    </div>
+    <div class="container">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category animate-on-scroll">
+                <h3>Frontend Development</h3>
+                <div class="skill-item">
+                    <i class="fab fa-html5"></i>
+                    <span>HTML5</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-css3-alt"></i>
+                    <span>CSS3</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-js"></i>
+                    <span>JavaScript</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-react"></i>
+                    <span>React</span>
                 </div>
             </div>
-        </section>
+
+            <div class="skill-category animate-on-scroll">
+                <h3>Backend Development</h3>
+                <div class="skill-item">
+                    <i class="fab fa-python"></i>
+                    <span>Python</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-node-js"></i>
+                    <span>Node.js</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-java"></i>
+                    <span>Java</span>
+                </div>
+            </div>
+
+            <div class="skill-category animate-on-scroll">
+                <h3>Database Technologies</h3>
+                <div class="skill-item">
+                    <i class="fas fa-database"></i>
+                    <span>MongoDB</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-database"></i>
+                    <span>MySQL</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-database"></i>
+                    <span>PostgreSQL</span>
+                </div>
+            </div>
+
+            <div class="skill-category animate-on-scroll">
+                <h3>DevOps & Tools</h3>
+                <div class="skill-item">
+                    <i class="fab fa-git-alt"></i>
+                    <span>Git</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-docker"></i>
+                    <span>Docker</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-aws"></i>
+                    <span>AWS</span>
+                </div>
+            </div>
+
+            <div class="skill-category animate-on-scroll">
+                <h3>Soft Skills</h3>
+                <div class="skill-item">
+                    <i class="fas fa-users"></i>
+                    <span>Team Collaboration</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-tasks"></i>
+                    <span>Project Management</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-comments"></i>
+                    <span>Communication</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
         <section id="testimonials" class="testimonials section">
             <div class="container">
@@ -164,30 +234,6 @@
             </div>
         </section>
 
-        <section id="blog" class="blog section">
-            <div class="container">
-                <h2 class="section-title">Blog</h2>
-                <div class="blog-grid">
-                    <article class="blog-card">
-                        <img src="blog1.jpg" alt="Modern Web Development">
-                        <div class="blog-content">
-                            <h3>Modern Web Development Practices</h3>
-                            <p>Exploring the latest trends and best practices in web development...</p>
-                            <a href="#" class="read-more">Read More</a>
-                        </div>
-                    </article>
-                    <article class="blog-card">
-                        <img src="blog2.jpg" alt="API Design">
-                        <div class="blog-content">
-                            <h3>RESTful API Design Principles</h3>
-                            <p>A comprehensive guide to building scalable and maintainable APIs...</p>
-                            <a href="#" class="read-more">Read More</a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
         <section id="cv" class="cv section">
             <div class="container">
                 <h2 class="section-title">Resume</h2>
@@ -197,7 +243,7 @@
                         <p>Full-Stack Developer with expertise in modern web technologies and a passion for creating exceptional digital experiences.</p>
                     </div>
                     <div class="cv-actions">
-                        <a href="/path-to-your-cv.pdf" class="btn btn-primary" download>
+                        <a href="/cv/delsa_marasha_resume.pdf" class="btn btn-primary" download>
                             <i class="fas fa-download"></i> Download CV
                         </a>
                         <a href="#contact" class="btn btn-secondary">
@@ -205,21 +251,17 @@
                         </a>
                     </div>
                     <div class="social-links-large">
-                        <a href="https://github.com/yourusername" target="_blank" class="social-link">
+                        <a href="https://github.com/Dee2002" target="_blank" class="social-link">
                             <i class="fab fa-github"></i>
                             <span>GitHub</span>
                         </a>
-                        <a href="https://linkedin.com/in/yourusername" target="_blank" class="social-link">
+                        <a href="https://www.linkedin.com/in/delsa-marasha/" target="_blank" class="social-link">
                             <i class="fab fa-linkedin"></i>
                             <span>LinkedIn</span>
                         </a>
-                        <a href="https://twitter.com/yourusername" target="_blank" class="social-link">
+                        <a href="https://x.com/marasha_delsa" target="_blank" class="social-link">
                             <i class="fab fa-twitter"></i>
                             <span>Twitter</span>
-                        </a>
-                        <a href="https://dev.to/yourusername" target="_blank" class="social-link">
-                            <i class="fab fa-dev"></i>
-                            <span>Dev.to</span>
                         </a>
                     </div>
                 </div>
@@ -229,7 +271,7 @@
         <section id="contact" class="contact section">
             <div class="container">
                 <h2 class="section-title">Contact</h2>
-                <form class="contact-form">
+                <form class="contact-form" role="form" aria-label="Contact form">
                     <div class="form-group">
                         <label for="name" class="form-label">Name</label>
                         <input type="text" id="name" class="form-input" required>
