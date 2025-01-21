@@ -22,6 +22,14 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Add scroll event listener for footer
     window.addEventListener('scroll', debounce(handleFooterVisibility, 100));
+    
+    // Initialize logo confetti
+    const logo = document.querySelector('.logo');
+    const confettiContainer = document.createElement('div');
+    confettiContainer.className = 'logo-confetti';
+    logo.appendChild(confettiContainer);
+    
+    logo.addEventListener('mouseenter', createConfetti);
 });
 
 // Theme handling
@@ -150,3 +158,54 @@ function handleFooterVisibility() {
     footer.classList.add('hidden');
     footer.classList.remove('visible');
 }
+
+// Add confetti effect for logo
+function createConfetti(event) {
+    const logo = event.target.closest('.logo');
+    if (!logo) return;
+
+    // Toggle DEV text
+    logo.classList.add('dev-mode');
+    setTimeout(() => logo.classList.remove('dev-mode'), 1500);
+
+    const rect = logo.getBoundingClientRect();
+    const center = {
+        x: rect.left + rect.width / 2,
+        y: rect.top + rect.height / 2
+    };
+
+    const animations = ['flyTopRight', 'flyTopLeft', 'flyBottomRight', 'flyBottomLeft'];
+    const colors = ['#2563eb', '#ec4899', '#60a5fa', '#8b5cf6'];
+
+    // Create confetti in all directions
+    for (let i = 0; i < 40; i++) {
+        const particle = document.createElement('span');
+        particle.textContent = 'dev';
+        particle.className = 'confetti-particle';
+        
+        // Set initial position at center
+        particle.style.left = `${center.x}px`;
+        particle.style.top = `${center.y}px`;
+        
+        // Random color
+        particle.style.color = colors[Math.floor(Math.random() * colors.length)];
+        
+        // Random animation from each direction
+        const animationName = animations[i % animations.length];
+        const duration = 0.8 + Math.random() * 0.4;
+        particle.style.animation = `${animationName} ${duration}s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards`;
+        
+        document.body.appendChild(particle);
+        
+        // Remove particle after animation
+        setTimeout(() => particle.remove(), duration * 1000);
+    }
+}
+
+// Initialize once DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    const logo = document.querySelector('.logo');
+    if (logo) {
+        logo.addEventListener('mouseenter', createConfetti);
+    }
+});

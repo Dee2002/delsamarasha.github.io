@@ -34,8 +34,80 @@ nav {
 }
 
 .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(300deg, #2563eb, #ec4899, #60a5fa, #8b5cf6);
+    background-size: 240% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 8s ease infinite;
+    position: relative;
+    display: inline-block;
+    z-index: 10; /* Increased z-index to ensure visibility */
+    transform-style: preserve-3d;
+    will-change: transform;
+    transition: all 0.3s ease;
+}
+
+.logo.dev-mode {
     font-size: 2rem;
-    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.logo.dev-mode span {
+    display: none;
+}
+
+.logo.dev-mode::after {
+    content: 'DEV';
+    background: linear-gradient(300deg, #2563eb, #ec4899, #60a5fa, #8b5cf6);
+    background-size: 240% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 8s ease infinite;
+}
+
+.logo::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #2563eb, #ec4899);
+    transition: width 0.4s ease;
+}
+
+.logo:hover {
+    transform: translateY(-2px);
+}
+
+.logo:hover::before {
+    width: 100%;
+}
+
+@keyframes shine {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.logo:hover span {
+    display: inline-block;
+    animation: bounce 0.3s ease infinite;
+    animation-delay: calc(0.1s * var(--i));
 }
 
 .nav-links {
@@ -852,7 +924,7 @@ body {
 }
 
 .nav-links a {
-  color: var(--dark);
+  color: var (--dark);
   text-decoration: none;
   font-weight: 500;
   position: relative;
@@ -1080,7 +1152,7 @@ body {
   transition: color 0.3s;
 }
 
-.social-link:hover {
+social-link:hover {
   color: var(--primary);
 }
 
@@ -2043,5 +2115,178 @@ img {
     
     .google-form {
         min-height: 600px;
+    }
+}
+
+/* Updated logo styles to accommodate confetti */
+.logo {
+    font-size: 1.5rem; /* Reduced from 2.2rem */
+    font-weight: 700;
+    background: linear-gradient(300deg, #2563eb, #ec4899, #60a5fa, #8b5cf6);
+    background-size: 240% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 8s ease infinite;
+    position: relative;
+    letter-spacing: 1px;
+    overflow: visible; /* Allow confetti to overflow */
+    z-index: 1; /* Updated z-index */
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.logo.dev-mode {
+    font-size: 2rem;
+    letter-spacing: 2px;
+}
+
+.logo.dev-mode span {
+    display: none;
+}
+
+.logo.dev-mode::after {
+    content: 'DEV';
+    background: linear-gradient(300deg, #2563eb, #ec4899, #60a5fa, #8b5cf6);
+    background-size: 240% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 8s ease infinite;
+}
+
+/* Add confetti container */
+.logo-confetti {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Confetti particle style */
+.confetti-dev {
+    position: fixed;
+    font-size: 1.2rem;
+    font-weight: bold;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Confetti animation */
+@keyframes confettiFlyOut {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--tx, 100px), var(--ty, -100px)) rotate(var(--r, 360deg));
+        opacity: 0;
+    }
+}
+
+/* Colors for dev text */
+.confetti-dev:nth-of-type(4n) { 
+    color: #2563eb;
+}
+.confetti-dev:nth-of-type(4n+1) { 
+    color: #ec4899;
+}
+.confetti-dev:nth-of-type(4n+2) { 
+    color: #60a5fa;
+}
+.confetti-dev:nth-of-type(4n+3) { 
+    color: #8b5cf6;
+}
+
+@keyframes confettiAnimation {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100px) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+.confetti-particle {
+    position: fixed;
+    pointer-events: none;
+    font-size: 1.4rem;
+    font-weight: bold;
+    z-index: 1000;
+    animation: none;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    font-family: 'Poppins', sans-serif;
+}
+
+@keyframes flyTopRight {
+    0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+    100% { transform: translate(100px, -100px) rotate(720deg); opacity: 0; }
+}
+
+@keyframes flyTopLeft {
+    0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+    100% { transform: translate(-100px, -100px) rotate(720deg); opacity: 0; }
+}
+
+@keyframes flyBottomRight {
+    0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+    100% { transform: translate(100px, 100px) rotate(720deg); opacity: 0; }
+}
+
+@keyframes flyBottomLeft {
+    0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+    100% { transform: translate(-100px, 100px) rotate(720deg); opacity: 0; }
+}
+
+.confetti-particle {
+    position: fixed;
+    pointer-events: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    animation: confettiDrop 1s ease-out forwards;
+    z-index: 1;
+}
+
+@keyframes confettiDrop {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.confetti-particle {
+    position: absolute;
+    pointer-events: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    z-index: 1;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    font-family: 'Poppins', sans-serif;
+    white-space: nowrap;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    will-change: transform, opacity;
+}
+
+@keyframes confettiDrop {
+    0% {
+        transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate3d(var(--dx), var(--dy), 0) rotate(var(--rotate)) scale(0.5);
+        opacity: 0;
     }
 }
